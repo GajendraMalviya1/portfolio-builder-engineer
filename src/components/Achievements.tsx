@@ -1,6 +1,6 @@
 
 import React, { useEffect } from "react";
-import { Trophy, Award, Medal, BookOpen, Star, Certificate } from "lucide-react";
+import { Trophy, Award, Medal, BookOpen, Star, BadgeCheck } from "lucide-react";
 
 type Achievement = {
   id: number;
@@ -36,7 +36,7 @@ const Achievements = () => {
       title: "AWS Certified Solutions Architect",
       issuer: "Amazon Web Services",
       date: "February 2023",
-      icon: <Certificate className="h-8 w-8 text-blue-500" />,
+      icon: <BadgeCheck className="h-8 w-8 text-blue-500" />,
       description: "Professional certification validating expertise in designing distributed systems on AWS.",
       credential: "https://aws.amazon.com/certification",
     },
@@ -45,7 +45,7 @@ const Achievements = () => {
       title: "Google Cloud Professional Data Engineer",
       issuer: "Google Cloud",
       date: "November 2022",
-      icon: <Certificate className="h-8 w-8 text-green-500" />,
+      icon: <BadgeCheck className="h-8 w-8 text-green-500" />,
       description: "Certification demonstrating ability to design, build, and maintain data processing systems on Google Cloud.",
       credential: "https://cloud.google.com/certification",
     },
@@ -72,7 +72,7 @@ const Achievements = () => {
       title: "TensorFlow Developer Certificate",
       issuer: "Google",
       date: "March 2022",
-      icon: <Certificate className="h-8 w-8 text-red-500" />,
+      icon: <BadgeCheck className="h-8 w-8 text-red-500" />,
       description: "Certification validating expertise in building and training neural networks using TensorFlow.",
       credential: "https://tensorflow.org/certificate",
     },
