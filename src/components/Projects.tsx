@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 
@@ -11,6 +10,7 @@ type Project = {
   github?: string;
   demo?: string;
   featured: boolean;
+  duration: string;
 };
 
 const Projects = () => {
@@ -23,60 +23,35 @@ const Projects = () => {
     const projectsData: Project[] = [
       {
         id: 1,
-        title: "Neural Artistic Style Transfer",
-        description: "An AI application that applies the artistic style of one image to the content of another using convolutional neural networks.",
+        title: "Crime Rate Prediction",
+        description: "Developed a machine learning model using regression techniques to analyze and forecast crime trends based on demographic, geographic, and temporal factors.",
         image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy"],
+        technologies: ["ML Algorithms", "Regression", "Neural Networks", "Python"],
         github: "https://github.com",
         demo: "https://demo.com",
         featured: true,
+        duration: "Feb 2024 – April 2024",
       },
       {
         id: 2,
-        title: "Cloud-based File System",
-        description: "A distributed file system with end-to-end encryption, version control, and real-time collaboration features.",
+        title: "Smart City Frontend",
+        description: "Designed and built a smart city web application that provides real-time visitor information to enhance the user experience.",
         image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        technologies: ["React", "Node.js", "AWS S3", "MongoDB", "Socket.io"],
+        technologies: ["HTML", "CSS3", "JavaScript", "Bootstrap", "UI/UX"],
         github: "https://github.com",
         featured: true,
+        duration: "Aug 2023 – Oct 2023",
       },
       {
         id: 3,
-        title: "Gesture-Controlled Drone",
-        description: "A custom-built drone that can be controlled with hand gestures recognized through computer vision algorithms.",
+        title: "Object Recognition by YOLOv5",
+        description: "Developed an object recognition system using YOLOv5, trained on a custom dataset to enhance accuracy.",
         image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        technologies: ["Python", "OpenCV", "Arduino", "ROS", "PlatformIO"],
+        technologies: ["Python", "C++", "Machine Learning"],
         github: "https://github.com",
         demo: "https://demo.com",
         featured: true,
-      },
-      {
-        id: 4,
-        title: "Smart Home Energy Monitor",
-        description: "An IoT system that tracks household energy usage in real-time and provides insights for optimization.",
-        image: "https://images.unsplash.com/photo-1542435503-956c469947f6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        technologies: ["Raspberry Pi", "Node.js", "MQTT", "InfluxDB", "Grafana"],
-        github: "https://github.com",
-        featured: false,
-      },
-      {
-        id: 5,
-        title: "Augmented Reality Navigation",
-        description: "A mobile app that uses AR to display directional cues in the real world for pedestrian navigation.",
-        image: "https://images.unsplash.com/photo-1616628188500-43d19c8e4664?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        technologies: ["Swift", "ARKit", "CoreLocation", "MapKit", "Firebase"],
-        github: "https://github.com",
-        demo: "https://demo.com",
-        featured: false,
-      },
-      {
-        id: 6,
-        title: "Blockchain-based Voting System",
-        description: "A secure, transparent voting platform built on blockchain technology to ensure tamper-proof election results.",
-        image: "https://images.unsplash.com/photo-1622819584099-e04c99d8e8c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        technologies: ["Solidity", "Ethereum", "Web3.js", "React", "Node.js"],
-        github: "https://github.com",
-        featured: false,
+        duration: "Feb 2023 – April 2023",
       },
     ];
 
@@ -120,7 +95,7 @@ const Projects = () => {
           My Projects
         </h2>
         <p className="section-subtitle text-center reveal" data-effect="fade-bottom">
-          A showcase of my technical projects, from machine learning to web applications and IoT systems
+          A showcase of my technical projects, from machine learning to web applications
         </p>
 
         {/* Filter buttons */}
@@ -193,7 +168,10 @@ const Projects = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-medium mb-2">{project.title}</h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-lg font-medium">{project.title}</h3>
+                  <span className="text-xs text-muted-foreground">{project.duration}</span>
+                </div>
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>

@@ -1,5 +1,6 @@
+
 import React, { useEffect, useRef } from "react";
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -36,7 +37,7 @@ const Hero = () => {
         <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl mb-8 animate-fade-in">
           <img
             src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=400&fit=crop&crop=faces&auto=format&q=90"
-            alt="Alex Chen"
+            alt="Gajendra Malviya"
             className="w-full h-full object-cover"
           />
         </div>
@@ -46,12 +47,31 @@ const Hero = () => {
         </p>
         
         <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-semibold mt-4 mb-6 animate-fade-in" style={{animationDelay: "0.3s"}}>
-          I'm <span className="text-primary">Alex Chen</span>
+          I'm <span className="text-primary">Gajendra Malviya</span>
         </h1>
         
         <h2 className="text-white/80 text-xl md:text-2xl max-w-xl animate-fade-in" style={{animationDelay: "0.4s"}}>
           Aspiring Engineer | Software Developer | Innovator
         </h2>
+        
+        <p className="text-white/80 mt-4 max-w-2xl text-base animate-fade-in" style={{animationDelay: "0.5s"}}>
+          Enthusiastic Software Developer with a strong foundation in programming and problem-solving, eager to apply skills to real-world challenges. Passionate about continuous learning and contributing to innovative projects in the tech industry.
+        </p>
+        
+        <div className="flex flex-wrap justify-center gap-3 mt-6 animate-fade-in" style={{animationDelay: "0.5s"}}>
+          <div className="flex items-center text-white/80 text-sm">
+            <MapPin size={16} className="mr-1" />
+            <span>Pali, Rajasthan, India</span>
+          </div>
+          <div className="flex items-center text-white/80 text-sm">
+            <Mail size={16} className="mr-1" />
+            <span>gajendramalviya1512@gmail.com</span>
+          </div>
+          <div className="flex items-center text-white/80 text-sm">
+            <Phone size={16} className="mr-1" />
+            <span>+919521871512</span>
+          </div>
+        </div>
         
         <div className="flex space-x-4 mt-8 animate-fade-in" style={{animationDelay: "0.6s"}}>
           <a 
@@ -73,7 +93,7 @@ const Hero = () => {
             <Linkedin size={20} />
           </a>
           <a 
-            href="mailto:alex@example.com" 
+            href="mailto:gajendramalviya1512@gmail.com" 
             className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
             aria-label="Email"
           >

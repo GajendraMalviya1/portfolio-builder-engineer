@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { 
   Code, Database, Terminal, Globe, Layout, Server, 
@@ -20,72 +19,48 @@ const Skills = () => {
       name: "Programming Languages",
       icon: <Code className="h-6 w-6 text-primary" />,
       skills: [
-        { name: "Python", level: 5 },
-        { name: "JavaScript", level: 5 },
-        { name: "TypeScript", level: 4 },
+        { name: "C++", level: 5 },
+        { name: "C", level: 4 },
         { name: "Java", level: 4 },
-        { name: "C++", level: 3 },
-        { name: "Swift", level: 3 },
+        { name: "Python", level: 3 },
+        { name: "JavaScript", level: 4 },
+        { name: "HTML/CSS", level: 4 },
       ],
     },
     {
-      name: "Web Technologies",
+      name: "Frameworks & Tools",
       icon: <Globe className="h-6 w-6 text-primary" />,
       skills: [
-        { name: "HTML5", level: 5 },
-        { name: "CSS3", level: 5 },
-        { name: "React", level: 4 },
-        { name: "Node.js", level: 4 },
-        { name: "Angular", level: 3 },
-        { name: "Vue.js", level: 3 },
+        { name: "ReactJS", level: 3 },
+        { name: "MongoDB", level: 3 },
+        { name: "MySQL", level: 4 },
+        { name: "Git & GitHub", level: 4 },
+        { name: "VS Code", level: 5 },
+        { name: "MS Office", level: 4 },
       ],
     },
     {
-      name: "Databases",
+      name: "Core Concepts",
       icon: <Database className="h-6 w-6 text-primary" />,
       skills: [
-        { name: "MySQL", level: 4 },
-        { name: "MongoDB", level: 4 },
-        { name: "PostgreSQL", level: 3 },
-        { name: "Firebase", level: 4 },
-        { name: "Redis", level: 3 },
-        { name: "GraphQL", level: 3 },
-      ],
-    },
-    {
-      name: "DevOps & Tools",
-      icon: <Terminal className="h-6 w-6 text-primary" />,
-      skills: [
-        { name: "Git", level: 4 },
-        { name: "Docker", level: 3 },
-        { name: "AWS", level: 3 },
-        { name: "CI/CD", level: 3 },
-        { name: "Kubernetes", level: 2 },
-        { name: "Jenkins", level: 2 },
-      ],
-    },
-    {
-      name: "UI/UX Design",
-      icon: <Layout className="h-6 w-6 text-primary" />,
-      skills: [
-        { name: "Figma", level: 4 },
-        { name: "Adobe XD", level: 3 },
-        { name: "Sketch", level: 3 },
-        { name: "Photoshop", level: 3 },
-        { name: "Illustrator", level: 2 },
-        { name: "InVision", level: 3 },
+        { name: "Data Structures & Algorithms", level: 4 },
+        { name: "OOPS", level: 4 },
+        { name: "DBMS", level: 4 },
+        { name: "Computer Networks", level: 3 },
+        { name: "Operating Systems", level: 3 },
+        { name: "UI/UX", level: 3 },
       ],
     },
     {
       name: "Soft Skills",
-      icon: <Search className="h-6 w-6 text-primary" />,
+      icon: <Terminal className="h-6 w-6 text-primary" />,
       skills: [
-        { name: "Problem Solving", level: 5 },
-        { name: "Team Collaboration", level: 4 },
         { name: "Communication", level: 4 },
+        { name: "Project Management", level: 3 },
+        { name: "Problem Solving", level: 5 },
+        { name: "Teamwork", level: 4 },
         { name: "Time Management", level: 4 },
-        { name: "Adaptability", level: 5 },
-        { name: "Leadership", level: 4 },
+        { name: "Adaptability", level: 4 },
       ],
     },
   ];
@@ -115,10 +90,10 @@ const Skills = () => {
     <section id="skills" className="bg-secondary/30 py-24">
       <div className="section-container">
         <h2 className="section-title text-center reveal" data-effect="fade-bottom">
-          My Skills
+          Technical Skills
         </h2>
         <p className="section-subtitle text-center reveal" data-effect="fade-bottom">
-          A diverse set of technical and soft skills accumulated throughout my academic and professional journey
+          A diverse set of technical and soft skills accumulated throughout my academic journey
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
