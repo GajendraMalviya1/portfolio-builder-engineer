@@ -118,7 +118,7 @@ const Hero = () => {
         <div className="md:w-2/5 flex justify-center md:justify-end animate-fade-in" style={{animationDelay: "0.7s"}}>
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
             <img
-              src="GajendraMalviya1/portfolio-builder-engineer/src/dDnqkzQfB3pmvEdrFSxAJSkAyyk.jpg"
+              src="abc.jpg"
               alt="Gajendra Malviya"
               className="w-full h-full object-cover grayscale"
             />
