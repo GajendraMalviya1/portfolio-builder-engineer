@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Calendar, Code, Briefcase, Award } from "lucide-react";
-
 type Experience = {
   id: number;
   title: string;
@@ -12,62 +11,38 @@ type Experience = {
   description: string[];
   technologies?: string[];
 };
-
 const Experience = () => {
-  const experiences: Experience[] = [
-    {
-      id: 1,
-      title: "Programming in C++, DSA",
-      company: "Chandigarh University",
-      location: "Mohali, Punjab, India",
-      date: "Aug 2022 - Present",
-      type: "technical",
-      icon: <Code className="h-5 w-5" />,
-      description: [
-        "Developed strong foundation in C and C++ programming languages",
-        "Implemented various data structures like arrays, linked lists, stacks, queues, trees, and graphs",
-        "Solved complex algorithmic problems applying different algorithmic paradigms",
-        "Participated in coding competitions and hackathons to enhance problem-solving skills",
-        "Mentored junior students in programming concepts and problem-solving approaches"
-      ],
-      technologies: ["C", "C++", "Data Structures", "Algorithms", "Problem Solving"],
-    },
-    {
-      id: 2,
-      title: "Project Management",
-      company: "Academic Projects",
-      location: "Chandigarh University",
-      date: "Jan 2023 - Present",
-      type: "management",
-      icon: <Briefcase className="h-5 w-5" />,
-      description: [
-        "Led multiple academic project teams with 4-6 members each",
-        "Applied Agile methodology for efficient project execution and delivery",
-        "Managed project timelines, resources, and task distribution among team members",
-        "Conducted regular project status meetings and ensured timely completion of milestones",
-        "Developed skills in conflict resolution, team motivation, and effective communication"
-      ],
-      technologies: ["Agile", "Scrum", "Kanban", "JIRA", "GitHub", "Team Leadership"],
-    },
-    {
-      id: 3,
-      title: "Java In-house Summer Trainee",
-      company: "Chandigarh University",
-      location: "Mohali, Punjab, India",
-      date: "May 2024 - June 2024",
-      type: "training",
-      icon: <Award className="h-5 w-5" />,
-      description: [
-        "Completed intensive 3-month in-house training program on Java and related technologies",
-        "Developed a comprehensive understanding of object-oriented programming concepts",
-        "Created various Java applications including console-based and GUI applications",
-        "Learned database connectivity using JDBC and implemented CRUD operations",
-        "Developed a mini-project implementing all concepts learned during the training"
-      ],
-      technologies: ["Java", "OOP", "JDBC", "MySQL", "Swing", "JavaFX"],
-    }
-  ];
-
+  const experiences: Experience[] = [{
+    id: 1,
+    title: "Programming in C++, DSA",
+    company: "Chandigarh University",
+    location: "Mohali, Punjab, India",
+    date: "Aug 2022 - Present",
+    type: "technical",
+    icon: <Code className="h-5 w-5" />,
+    description: ["Developed strong foundation in C and C++ programming languages", "Implemented various data structures like arrays, linked lists, stacks, queues, trees, and graphs", "Solved complex algorithmic problems applying different algorithmic paradigms", "Participated in coding competitions and hackathons to enhance problem-solving skills", "Mentored junior students in programming concepts and problem-solving approaches"],
+    technologies: ["C", "C++", "Data Structures", "Algorithms", "Problem Solving"]
+  }, {
+    id: 2,
+    title: "Project Management",
+    company: "Academic Projects",
+    location: "Chandigarh University",
+    date: "Jan 2023 - Present",
+    type: "management",
+    icon: <Briefcase className="h-5 w-5" />,
+    description: ["Led multiple academic project teams with 4-6 members each", "Applied Agile methodology for efficient project execution and delivery", "Managed project timelines, resources, and task distribution among team members", "Conducted regular project status meetings and ensured timely completion of milestones", "Developed skills in conflict resolution, team motivation, and effective communication"],
+    technologies: ["Agile", "Scrum", "Kanban", "JIRA", "GitHub", "Team Leadership"]
+  }, {
+    id: 3,
+    title: "Java In-house Summer Trainee",
+    company: "Chandigarh University",
+    location: "Mohali, Punjab, India",
+    date: "May 2024 - June 2024",
+    type: "training",
+    icon: <Award className="h-5 w-5" />,
+    description: ["Completed intensive 3-month in-house training program on Java and related technologies", "Developed a comprehensive understanding of object-oriented programming concepts", "Created various Java applications including console-based and GUI applications", "Learned database connectivity using JDBC and implemented CRUD operations", "Developed a mini-project implementing all concepts learned during the training"],
+    technologies: ["Java", "OOP", "JDBC", "MySQL", "Swing", "JavaFX"]
+  }];
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
@@ -76,21 +51,16 @@ const Experience = () => {
         }
       });
     };
-
     const observer = new IntersectionObserver(handleIntersection, {
       threshold: 0.1,
       rootMargin: '0px 0px -100px 0px'
     });
-
     document.querySelectorAll('.reveal').forEach(element => {
       observer.observe(element);
     });
-
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <section id="experience" className="bg-secondary/30 py-24">
+  return <section id="experience" className="bg-secondary/30 py-24">
       <div className="section-container">
         <h2 className="section-title text-center reveal" data-effect="fade-bottom">
           My Experience
@@ -105,12 +75,7 @@ const Experience = () => {
           
           {/* Timeline Items */}
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div 
-                key={exp.id} 
-                className="relative flex flex-col reveal"
-                data-effect="fade-right"
-              >
+            {experiences.map((exp, index) => <div key={exp.id} className="relative flex flex-col reveal" data-effect="fade-right">
                 {/* Timeline Dot */}
                 <div className="absolute left-12 w-7 h-7 rounded-full border-4 border-background bg-primary transform -translate-x-3.5 flex items-center justify-center z-10">
                   {exp.icon}
@@ -134,35 +99,23 @@ const Experience = () => {
                     </div>
                     
                     <ul className="text-muted-foreground space-y-2 text-sm">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className="flex items-start">
-                          <span className="mr-2 mt-1.5">•</span>
+                      {exp.description.map((item, i) => <li key={i} className="flex items-start">
+                          <span className="mr-2 mt-1.5 font-bold text-base">•</span>
                           <span>{item}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                     
-                    {exp.technologies && (
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {exp.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full"
-                          >
+                    {exp.technologies && <div className="flex flex-wrap gap-2 mt-4">
+                        {exp.technologies.map(tech => <span key={tech} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
                             {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                          </span>)}
+                      </div>}
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Experience;
