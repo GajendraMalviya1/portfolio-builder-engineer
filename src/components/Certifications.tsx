@@ -18,7 +18,7 @@ const Certifications = () => {
       title: "Introduction to Database",
       issuer: "Meta (Coursera)",
       date: "2023",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
+      image: "https://img.freepik.com/free-vector/hand-coding-concept-illustration_114360-8193.jpg",
       link: "https://drive.google.com/file/d/1IW6FGRyJqv3T7QuVmCtH9KBG9uD2BIO0/view?usp=drive_link"
     },
     {
@@ -26,7 +26,7 @@ const Certifications = () => {
       title: "Computer Organization & Architecture",
       issuer: "IIT Guwahati (NPTEL)",
       date: "2023",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop",
+      image: "https://img.freepik.com/premium-vector/software-engineer-writing-code-computer-coder-programming-database-programmer-typing-script-solves-problems-algorithm-digital-development-flat-isolated-vector-illustration-white_633472-6162.jpg?semt=ais_hybrid",
       link: "https://drive.google.com/file/d/1IIuvr12Wm87QRPruEGRNzmn4mlbha9na/view?usp=drive_link"
     },
     {
@@ -34,24 +34,24 @@ const Certifications = () => {
       title: "Software Engineering Intern",
       issuer: "HackerRank",
       date: "2025",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg2XjMFRpXLhaLduCammzYWDtI3zcRfCU7Jw&s",
       link: "https://drive.google.com/file/d/15b6Zgexhhc1D-SwONjjfYgAikEoP-Dwe/view?usp=drive_link"
     },
     {
       id: 4,
-      title: "Data Structures and Algorithms",
-      issuer: "Udemy",
-      date: "2022",
-      image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=500&h=300&fit=crop",
-      link: "https://udemy.com"
+      title: "Java Inhouse Summer Trainee",
+      issuer: "Chandigarh University",
+      date: "2024",
+      image: "https://cdn.prod.website-files.com/6344c9cef89d6f2270a38908/65725709c91402ab52b1c2b9_Best%207%2B%20Coding%20Languages%20for%20a%20SaaS%20Tech%20Stack%202023%20Guide.webp",
+      link: "https://drive.google.com/file/d/1CY3cYKNoWlyG434DOlz1rNAA9T-ja9RQ/view?usp=sharing"
     },
     {
       id: 5,
-      title: "Web Development Bootcamp",
-      issuer: "freeCodeCamp",
-      date: "2022",
+      title: "Enterpreneurship",
+      issuer: "Linkedin Learning",
+      date: "2024",
       image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=500&h=300&fit=crop",
-      link: "https://freecodecamp.org"
+      link: "https://drive.google.com/file/d/1ROXSmT7lkKF6wLlhzUZDhD3yelX4rpmU/view?usp=sharing"
     }
   ];
 
