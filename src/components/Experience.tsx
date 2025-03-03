@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Calendar, Code, Briefcase, Award } from "lucide-react";
 
@@ -102,55 +101,39 @@ const Experience = () => {
 
         <div className="relative mt-16">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 h-full w-0.5 bg-border transform md:-translate-x-0.5"></div>
+          <div className="absolute left-12 md:left-12 h-full w-0.5 bg-border"></div>
           
           {/* Timeline Items */}
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div 
                 key={exp.id} 
-                className={`relative flex flex-col md:flex-row ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                } reveal`}
-                data-effect={index % 2 === 0 ? "fade-left" : "fade-right"}
+                className="relative flex flex-col reveal"
+                data-effect="fade-right"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 w-7 h-7 rounded-full border-4 border-background bg-primary transform -translate-x-3 md:-translate-x-3.5 flex items-center justify-center z-10">
+                <div className="absolute left-12 w-7 h-7 rounded-full border-4 border-background bg-primary transform -translate-x-3.5 flex items-center justify-center z-10">
                   {exp.icon}
                 </div>
                 
                 {/* Date for mobile */}
-                <div className="md:hidden pl-10 mb-4 flex items-center text-sm text-muted-foreground">
+                <div className="pl-20 mb-4 flex items-center text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4 mr-2" />
                   {exp.date}
                 </div>
                 
                 {/* Content */}
-                <div className={`w-full md:w-1/2 ${
-                  index % 2 === 0 
-                  ? "md:pr-12 md:text-right" 
-                  : "md:pl-12"
-                } pl-10 md:pl-0`}>
+                <div className="pl-20">
                   <div className="glassmorphism rounded-xl p-6">
-                    <div className={`flex items-center justify-between mb-4 ${
-                      index % 2 === 0 ? "md:flex-row-reverse" : ""
-                    }`}>
+                    <div className="flex items-center justify-between mb-4">
                       <div>
                         <h3 className="text-xl font-medium">{exp.title}</h3>
                         <p className="text-primary font-medium">{exp.company}</p>
                         <p className="text-muted-foreground text-sm">{exp.location}</p>
                       </div>
-                      
-                      {/* Date for desktop */}
-                      <div className="hidden md:flex items-center text-sm text-muted-foreground">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        {exp.date}
-                      </div>
                     </div>
                     
-                    <ul className={`text-muted-foreground space-y-2 text-sm ${
-                      index % 2 === 0 ? "md:text-right" : ""
-                    }`}>
+                    <ul className="text-muted-foreground space-y-2 text-sm">
                       {exp.description.map((item, i) => (
                         <li key={i} className="flex items-start">
                           <span className="mr-2 mt-1.5">•</span>
@@ -160,9 +143,7 @@ const Experience = () => {
                     </ul>
                     
                     {exp.technologies && (
-                      <div className={`flex flex-wrap gap-2 mt-4 ${
-                        index % 2 === 0 ? "md:justify-end" : ""
-                      }`}>
+                      <div className="flex flex-wrap gap-2 mt-4">
                         {exp.technologies.map((tech) => (
                           <span
                             key={tech}

@@ -13,6 +13,23 @@ import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+const Background = () => {
+  return (
+    <div className="background">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  );
+};
+
 const Index = () => {
   useEffect(() => {
     // Initialize intersection observer for reveal animations
@@ -38,6 +55,7 @@ const Index = () => {
 
   return (
     <div className="bg-background min-h-screen">
+      <Background />
       <Header />
       <Hero />
       <About />
@@ -45,7 +63,6 @@ const Index = () => {
       <Skills />
       <Projects />
       <Experience />
-      <Accomplishments />
       <Certifications />
       <Resume />
       <Contact />
