@@ -22,6 +22,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Education", href: "#education" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
@@ -34,8 +35,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "py-3 bg-background/80 backdrop-blur-md border-b border-border/50"
-          : "py-5 bg-black/50 backdrop-blur-sm dark:bg-black/50"
+          ? "py-3 bg-background/90 backdrop-blur-md border-b border-border/50 dark:bg-background/80"
+          : "py-5 bg-white/90 backdrop-blur-sm dark:bg-black/50"
       }`}
     >
       <div className="section-container">

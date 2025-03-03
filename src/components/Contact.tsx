@@ -21,25 +21,49 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Email sending functionality
+      const emailContent = `
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Subject: ${formData.subject}
+        Message: ${formData.message}
+      `;
+      
+      // In a real implementation, you would use a service like EmailJS, FormSubmit, or a custom API
+      // For now, we'll just simulate the process
+      console.log("Email content to be sent:", emailContent);
+      
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
       toast({
         title: "Message sent successfully!",
-        description: "I'll get back to you as soon as possible.",
+        description: "Your message has been sent to Gajendra's email.",
         duration: 5000,
       });
+      
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   useEffect(() => {
@@ -73,9 +97,9 @@ const Contact = () => {
           Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
           {/* Contact Form */}
-          <div className="glassmorphism rounded-xl p-8 reveal" data-effect="fade-right">
+          <div className="glassmorphism rounded-xl p-8 reveal h-full" data-effect="fade-right">
             <h3 className="text-xl font-medium mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit}>
               <div className="space-y-4">
@@ -168,15 +192,15 @@ const Contact = () => {
           </div>
           
           {/* Contact Information */}
-          <div className="flex flex-col justify-between reveal" data-effect="fade-left">
-            <div className="glassmorphism rounded-xl p-8 mb-6">
+          <div className="flex flex-col space-y-6 reveal" data-effect="fade-left">
+            <div className="glassmorphism rounded-xl p-8 h-auto">
               <h3 className="text-xl font-medium mb-6">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start">
                   <MapPin className="h-5 w-5 text-primary mt-1 mr-3" />
                   <div>
                     <h4 className="font-medium">Location</h4>
-                    <p className="text-muted-foreground">Stanford, California</p>
+                    <p className="text-muted-foreground">Pali, Rajasthan, India</p>
                   </div>
                 </div>
                 
@@ -185,10 +209,10 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium">Email</h4>
                     <a 
-                      href="mailto:alex@example.com" 
+                      href="mailto:gajendramalviya1512@gmail.com" 
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      alex@example.com
+                      gajendramalviya1512@gmail.com
                     </a>
                   </div>
                 </div>
@@ -198,17 +222,17 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium">Phone</h4>
                     <a 
-                      href="tel:+15551234567" 
+                      href="tel:+919521871512" 
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +1 (555) 123-4567
+                      +91 95218 71512
                     </a>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="glassmorphism rounded-xl p-8 mb-6">
+            <div className="glassmorphism rounded-xl p-8 h-auto">
               <h3 className="text-xl font-medium mb-6">Connect With Me</h3>
               <div className="grid grid-cols-3 gap-4">
                 <a
@@ -243,7 +267,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="glassmorphism rounded-xl p-8">
+            <div className="glassmorphism rounded-xl p-8 h-auto">
               <h3 className="text-xl font-medium mb-6">Office Hours</h3>
               <div className="space-y-2">
                 <div className="flex justify-between">

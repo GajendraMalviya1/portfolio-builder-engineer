@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
-import { ChevronDown, Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Mail, Phone, MapPin, Code } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -76,6 +76,15 @@ const Hero = () => {
               aria-label="GitHub"
             >
               <Github size={20} />
+            </a>
+            <a 
+              href="https://codfolio.com/yourprofile" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
+              aria-label="Codfolio"
+            >
+              <Code size={20} />
             </a>
             <a 
               href="https://linkedin.com" 
