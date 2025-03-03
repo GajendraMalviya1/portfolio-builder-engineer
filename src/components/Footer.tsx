@@ -19,8 +19,8 @@ const Footer = () => {
           {/* Logo */}
           <div className="mb-8 md:mb-0">
             <a href="#home" className="text-2xl font-semibold tracking-tight flex items-center">
-              <span className="text-primary">Alex</span>
-              <span>.Chen</span>
+              <span className="text-primary">Gajendra</span>
+              <span> Malviya</span>
             </a>
             <p className="text-muted-foreground mt-2 max-w-xs">
               A passionate engineer focused on creating innovative solutions to real-world problems.
@@ -53,7 +53,7 @@ const Footer = () => {
               <h3 className="text-sm font-medium uppercase mb-4">Connect</h3>
               <div className="flex space-x-3 justify-center md:justify-start">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/GajendraMalviya1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-full bg-secondary/80 text-foreground hover:bg-primary/20 transition-all"
@@ -62,7 +62,7 @@ const Footer = () => {
                   <Github size={16} />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/gajendra-malviya-99226a291/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-full bg-secondary/80 text-foreground hover:bg-primary/20 transition-all"
@@ -80,7 +80,7 @@ const Footer = () => {
                   <Twitter size={16} />
                 </a>
                 <a
-                  href="mailto:alex@example.com"
+                  href="mailto:gajendramalviya1512@gmail.com"
                   className="p-2 rounded-full bg-secondary/80 text-foreground hover:bg-primary/20 transition-all"
                   aria-label="Email"
                 >
@@ -97,7 +97,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            &copy; {currentYear} Alex Chen. All rights reserved.
+            &copy; {currentYear} Gajendra Malviya. All rights reserved.
           </p>
           
           <div className="flex items-center">

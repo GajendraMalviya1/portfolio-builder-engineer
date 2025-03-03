@@ -44,7 +44,7 @@ const About = () => {
               My journey in technology began with a strong foundation in programming. Since then, I've been captivated by the endless possibilities that engineering and computer science offer to improve lives and shape the future.
             </p>
             <p className="text-muted-foreground">
-              Outside of coding, I enjoy playing softball, participating in hackathons, and continuously expanding my knowledge in the tech domain.
+              Outside of coding, I enjoy playing Chess,Badminton, participating in hackathons, and continuously expanding my knowledge in the tech domain.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-6">
@@ -60,14 +60,8 @@ const About = () => {
                 <Lightbulb size={18} className="text-primary mr-2" />
                 <span>Problem Solver</span>
               </div>
-              <div className="flex items-center">
-                <Award size={18} className="text-primary mr-2" />
-                <span>8.58 CGPA</span>
-              </div>
-              <div className="flex items-center">
-                <Coffee size={18} className="text-primary mr-2" />
-                <span>Tech Enthusiast</span>
-              </div>
+              
+              
             </div>
           </div>
         </div>

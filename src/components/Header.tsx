@@ -47,7 +47,7 @@ const Header = () => {
             className="text-xl font-semibold tracking-tight flex items-center text-foreground dark:text-white"
           >
             <span className="text-primary">Gajendra</span>
-            <span>.Malviya</span>
+            <span> Malviya</span>
           </a>
 
           {/* Desktop Navigation */}

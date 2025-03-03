@@ -19,7 +19,7 @@ const Certifications = () => {
       issuer: "Meta (Coursera)",
       date: "2023",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
-      link: "https://coursera.org"
+      link: "https://drive.google.com/file/d/1IW6FGRyJqv3T7QuVmCtH9KBG9uD2BIO0/view?usp=drive_link"
     },
     {
       id: 2,
@@ -27,15 +27,15 @@ const Certifications = () => {
       issuer: "IIT Guwahati (NPTEL)",
       date: "2023",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop",
-      link: "https://nptel.ac.in"
+      link: "https://drive.google.com/file/d/1IIuvr12Wm87QRPruEGRNzmn4mlbha9na/view?usp=drive_link"
     },
     {
       id: 3,
-      title: "Software Engineering",
+      title: "Software Engineering Intern",
       issuer: "HackerRank",
-      date: "2023",
+      date: "2025",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
-      link: "https://hackerrank.com"
+      link: "https://drive.google.com/file/d/15b6Zgexhhc1D-SwONjjfYgAikEoP-Dwe/view?usp=drive_link"
     },
     {
       id: 4,

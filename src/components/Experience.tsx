@@ -18,7 +18,7 @@ const Experience = () => {
   const experiences: Experience[] = [
     {
       id: 1,
-      title: "Programming in C, C++, DSA",
+      title: "Programming in C++, DSA",
       company: "Chandigarh University",
       location: "Mohali, Punjab, India",
       date: "Aug 2022 - Present",
@@ -55,7 +55,7 @@ const Experience = () => {
       title: "Java In-house Summer Trainee",
       company: "Chandigarh University",
       location: "Mohali, Punjab, India",
-      date: "June 2023 - Aug 2023",
+      date: "May 2024 - June 2024",
       type: "training",
       icon: <Award className="h-5 w-5" />,
       description: [

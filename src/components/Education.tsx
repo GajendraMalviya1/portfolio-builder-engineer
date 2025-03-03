@@ -30,7 +30,7 @@ const Education = () => {
       institution: "Sooraj Sikshan Sansthan Senior Secondary School",
       degree: "Class 8th to Class 12th (Science - Mathematics)",
       location: "Pali, Rajasthan",
-      duration: "April 2015 - May 2021",
+      duration: "July 2016 - May 2021",
       grades: "12th Grade: 98.80%, 10th Grade: 92.17%",
       icon: <BookOpen className="h-6 w-6" />
     },
@@ -39,7 +39,7 @@ const Education = () => {
       institution: "Balaji Vidhyapeeth Uchch Prathmik Vidhyalay",
       degree: "Class 1st to Class 7th",
       location: "Pali, Rajasthan",
-      duration: "April 2008 - March 2015",
+      duration: "July 2007 - March 2015",
       icon: <BookOpen className="h-6 w-6" />
     }
   ];

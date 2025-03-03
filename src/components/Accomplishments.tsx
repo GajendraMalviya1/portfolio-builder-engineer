@@ -23,7 +23,7 @@ const Accomplishments = () => {
       title: "'Elite' Rank Holder in Computer Organization and Architecture",
       description: "Achieved Elite rank in the NPTEL course by IIT Guwahati (2023).",
       icon: <Award className="h-8 w-8 text-blue-500" />,
-      link: "https://nptel.ac.in",
+      link: "https://drive.google.com/file/d/1IIuvr12Wm87QRPruEGRNzmn4mlbha9na/view?usp=drive_link",
     },
     {
       id: 3,
@@ -36,21 +36,21 @@ const Accomplishments = () => {
       title: "Solved 500+ DSA Problems",
       description: "Completed over 500 Data Structures and Algorithms problems on Leetcode, GFG, and HackerRank.",
       icon: <Star className="h-8 w-8 text-green-500" />,
-      link: "https://leetcode.com/profile",
+      link: "https://leetcode.com/u/Gajendra_malviya/",
     },
     {
       id: 5,
       title: "LeetCode Biweekly Contest",
       description: "Achieved 150th rank in February 2025 Biweekly Contest 150 on LeetCode.",
       icon: <Trophy className="h-8 w-8 text-yellow-500" />,
-      link: "https://leetcode.com/contest/biweekly-contest-150",
+      link: "https://leetcode.com/u/Gajendra_malviya/",
     },
     {
       id: 6,
       title: "Gold Badge in C++",
       description: "Earned Gold Badge in C++ programming on HackerRank.",
       icon: <BadgeCheck className="h-8 w-8 text-amber-500" />,
-      link: "https://hackerrank.com",
+      link: "https://www.hackerrank.com/profile/gajendramalviya1",
     },
   ];
 

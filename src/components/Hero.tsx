@@ -58,7 +58,7 @@ const Hero = () => {
           </h2>
           
           <p className="text-white/80 mt-4 max-w-2xl text-base animate-fade-in" style={{animationDelay: "0.5s"}}>
-            Enthusiastic Software Developer with a strong foundation in programming and problem-solving, eager to apply skills to real-world challenges. Passionate about continuous learning and contributing to innovative projects in the tech industry.
+            Enthusiastic Software Developer with a strong foundation in programming and problem-solving, eager to apply skills to real-world challenges.
           </p>
           
           <div className="flex flex-wrap gap-3 mt-6 animate-fade-in" style={{animationDelay: "0.5s"}}>
@@ -78,7 +78,7 @@ const Hero = () => {
           
           <div className="flex space-x-4 mt-8 animate-fade-in" style={{animationDelay: "0.6s"}}>
             <a 
-              href="https://github.com" 
+              href="https://github.com/GajendraMalviya1" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
@@ -96,7 +96,7 @@ const Hero = () => {
               <Code size={20} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/gajendra-malviya-99226a291/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300"

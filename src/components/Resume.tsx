@@ -105,9 +105,9 @@ const Resume = () => {
                         <p className="font-semibold">Chandigarh University</p>
                         <div className="flex justify-between">
                           <p>B.E. Computer Science Engineering</p>
-                          <p>2020 - 2024</p>
+                          <p>2022 - 2026</p>
                         </div>
-                        <p className="text-gray-600">CGPA: 8.58/10.0</p>
+                        <p className="text-gray-600">CGPA: 8.58</p>
                       </div>
                     </div>
                     
