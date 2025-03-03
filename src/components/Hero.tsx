@@ -118,7 +118,7 @@ const Hero = () => {
         <div className="md:w-2/5 flex justify-center md:justify-end animate-fade-in" style={{animationDelay: "0.7s"}}>
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=400&fit=crop&crop=faces&auto=format&q=90"
+              src="GajendraMalviya1/portfolio-builder-engineer/src/dDnqkzQfB3pmvEdrFSxAJSkAyyk.jpg"
               alt="Gajendra Malviya"
               className="w-full h-full object-cover grayscale"
             />

@@ -32,8 +32,8 @@ const Resume = () => {
     try {
       // Create a link to the resume file
       const link = document.createElement('a');
-      link.href = '/resume-gajendra-malviya.pdf'; // Path to your resume PDF in the public folder
-      link.download = 'Gajendra-Malviya-Resume.pdf';
+      link.href = 'https://drive.google.com/file/d/1MNJT1E-cxkJNBHModyF8JwW7Po7JTejH/view?usp=sharing'; // Path to your resume PDF in the public folder
+      link.download = 'https://drive.google.com/file/d/1MNJT1E-cxkJNBHModyF8JwW7Po7JTejH/view?usp=sharing';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
