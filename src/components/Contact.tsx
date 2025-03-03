@@ -95,7 +95,7 @@ const Contact = () => {
           Get In Touch
         </h2>
         <p className="section-subtitle text-center reveal" data-effect="fade-bottom">
-          Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+          Feel free to reach out!
         </p>
 
         <div className="max-w-2xl mx-auto mt-16">
@@ -146,7 +146,7 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Project Opportunity"
+                    placeholder="Let's Connect"
                     required
                     className="w-full p-3 bg-secondary/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                   />
@@ -161,7 +161,7 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="I'd like to discuss a potential project..."
+                    placeholder="I'd like to discuss ..."
                     required
                     rows={5}
                     className="w-full p-3 bg-secondary/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none transition-all resize-none"

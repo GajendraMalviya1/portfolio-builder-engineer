@@ -31,7 +31,7 @@ const Education = () => {
       degree: "Class 8th to Class 12th (Science - Mathematics)",
       location: "Pali, Rajasthan",
       duration: "July 2016 - May 2021",
-      grades: "12th Grade: 98.80%, 10th Grade: 92.17%",
+      grades: "12th Grade: 98.80% ||  10th Grade: 92.17%",
       icon: <BookOpen className="h-6 w-6" />
     },
     {

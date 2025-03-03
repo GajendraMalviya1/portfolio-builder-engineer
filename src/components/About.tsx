@@ -44,7 +44,7 @@ const About = () => {
               My journey in technology began with a strong foundation in programming. Since then, I've been captivated by the endless possibilities that engineering and computer science offer to improve lives and shape the future.
             </p>
             <p className="text-muted-foreground">
-              Outside of coding, I enjoy playing Chess,Badminton, participating in hackathons, and continuously expanding my knowledge in the tech domain.
+              Outside of coding, I enjoy playing Chess , Badminton , participating in hackathons, and continuously expanding my knowledge in the tech domain.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-6">

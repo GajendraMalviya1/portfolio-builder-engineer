@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="mb-8 md:mb-0">
             <a href="#home" className="text-2xl font-semibold tracking-tight flex items-center">
               <span className="text-primary">Gajendra</span>
-              <span> Malviya</span>
+              <span> &nbsp;Malviya</span>
             </a>
             <p className="text-muted-foreground mt-2 max-w-xs">
               A passionate engineer focused on creating innovative solutions to real-world problems.

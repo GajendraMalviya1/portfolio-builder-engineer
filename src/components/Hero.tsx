@@ -54,7 +54,7 @@ const Hero = () => {
           </h1>
           
           <h2 className="text-white/80 text-xl md:text-2xl max-w-xl animate-fade-in" style={{animationDelay: "0.4s"}}>
-            Aspiring Engineer | Software Developer | Innovator
+            Aspiring Engineer  |  Software Developer 
           </h2>
           
           <p className="text-white/80 mt-4 max-w-2xl text-base animate-fade-in" style={{animationDelay: "0.5s"}}>
@@ -64,7 +64,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-3 mt-6 animate-fade-in" style={{animationDelay: "0.5s"}}>
             <div className="flex items-center text-white/80 text-sm">
               <MapPin size={16} className="mr-1" />
-              <span>Pali, Rajasthan, India</span>
+              <span>Pali Rajasthan, India</span>
             </div>
             <div className="flex items-center text-white/80 text-sm">
               <Mail size={16} className="mr-1" />
@@ -118,7 +118,7 @@ const Hero = () => {
         <div className="md:w-2/5 flex justify-center md:justify-end animate-fade-in" style={{animationDelay: "0.7s"}}>
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
             <img
-              src="abc.jpg"
+              src="https://img.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_138676-2387.jpg"
               alt="Gajendra Malviya"
               className="w-full h-full object-cover grayscale"
             />

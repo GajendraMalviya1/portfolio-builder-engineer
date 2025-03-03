@@ -50,7 +50,7 @@ const Certifications = () => {
       title: "Enterpreneurship",
       issuer: "Linkedin Learning",
       date: "2024",
-      image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=500&h=300&fit=crop",
+      image: "https://img.freepik.com/premium-vector/continuous-line-drawing-entrepreneur-looking-investment-opportunity-standing-growth_500861-701.jpg",
       link: "https://drive.google.com/file/d/1ROXSmT7lkKF6wLlhzUZDhD3yelX4rpmU/view?usp=sharing"
     }
   ];
