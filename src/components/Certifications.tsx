@@ -1,12 +1,13 @@
 
 import React, { useEffect } from "react";
-import { BadgeCheck, ExternalLink, Calendar } from "lucide-react";
+import { BadgeCheck, ExternalLink, Calendar, Eye } from "lucide-react";
 
 type Certification = {
   id: number;
   title: string;
   issuer: string;
   date: string;
+  image: string;
   link?: string;
 };
 
@@ -17,6 +18,7 @@ const Certifications = () => {
       title: "Introduction to Database",
       issuer: "Meta (Coursera)",
       date: "2023",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
       link: "https://coursera.org"
     },
     {
@@ -24,6 +26,7 @@ const Certifications = () => {
       title: "Computer Organization & Architecture",
       issuer: "IIT Guwahati (NPTEL)",
       date: "2023",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop",
       link: "https://nptel.ac.in"
     },
     {
@@ -31,9 +34,59 @@ const Certifications = () => {
       title: "Software Engineering",
       issuer: "HackerRank",
       date: "2023",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
       link: "https://hackerrank.com"
+    },
+    {
+      id: 4,
+      title: "Data Structures and Algorithms",
+      issuer: "Udemy",
+      date: "2022",
+      image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=500&h=300&fit=crop",
+      link: "https://udemy.com"
+    },
+    {
+      id: 5,
+      title: "Web Development Bootcamp",
+      issuer: "freeCodeCamp",
+      date: "2022",
+      image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=500&h=300&fit=crop",
+      link: "https://freecodecamp.org"
     }
   ];
+
+  const handlePreview = (image: string, title: string) => {
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 z-[999] flex items-center justify-center bg-black/70 animate-fade-in';
+    
+    // Create the modal content
+    modal.innerHTML = `
+      <div class="relative bg-background p-4 rounded-lg max-w-2xl mx-4 animate-scale-in">
+        <button class="absolute right-3 top-3 p-1 rounded-full bg-secondary/80 hover:bg-secondary text-foreground" id="close-modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <h3 class="text-xl font-medium mb-4">${title} Certificate</h3>
+        <img src="${image}" alt="${title}" class="w-full rounded-lg" />
+      </div>
+    `;
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // Add event listener to close modal
+    document.getElementById('close-modal')?.addEventListener('click', () => {
+      document.body.removeChild(modal);
+      document.body.style.overflow = '';
+    });
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        document.body.removeChild(modal);
+        document.body.style.overflow = '';
+      }
+    });
+  };
 
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -70,37 +123,54 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <div
               key={cert.id}
-              className="glassmorphism rounded-xl p-6 reveal transition-all duration-300 hover:shadow-lg"
+              className="glassmorphism rounded-xl overflow-hidden reveal transition-all duration-300 hover:shadow-lg"
               data-effect="fade-bottom"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-start">
-                <div className="flex-shrink-0 mr-4">
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <BadgeCheck className="h-6 w-6 text-primary" />
+              <div className="relative h-40 overflow-hidden">
+                <img 
+                  src={cert.image} 
+                  alt={cert.title} 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+                <button 
+                  onClick={() => handlePreview(cert.image, cert.title)}
+                  className="absolute bottom-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white text-foreground transition-all duration-300"
+                  aria-label="Preview certificate"
+                >
+                  <Eye size={18} />
+                </button>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mr-4">
+                    <div className="p-2 rounded-full bg-primary/10">
+                      <BadgeCheck className="h-5 w-5 text-primary" />
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex-grow">
-                  <h3 className="text-lg font-medium">{cert.title}</h3>
-                  <p className="text-primary text-sm">{cert.issuer}</p>
                   
-                  <div className="flex items-center mt-2 text-xs text-muted-foreground">
-                    <Calendar className="h-3 w-3 mr-1" />
-                    <span>{cert.date}</span>
+                  <div className="flex-grow">
+                    <h3 className="text-lg font-medium">{cert.title}</h3>
+                    <p className="text-primary text-sm">{cert.issuer}</p>
+                    
+                    <div className="flex items-center mt-2 text-xs text-muted-foreground">
+                      <Calendar className="h-3 w-3 mr-1" />
+                      <span>{cert.date}</span>
+                    </div>
+                    
+                    {cert.link && (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center mt-4 text-sm text-primary hover:text-primary/80 transition-colors"
+                      >
+                        View Certificate
+                        <ExternalLink size={14} className="ml-1" />
+                      </a>
+                    )}
                   </div>
-                  
-                  {cert.link && (
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center mt-4 text-sm text-primary hover:text-primary/80 transition-colors"
-                    >
-                      View Certificate
-                      <ExternalLink size={14} className="ml-1" />
-                    </a>
-                  )}
                 </div>
               </div>
             </div>

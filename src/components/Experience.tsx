@@ -1,6 +1,6 @@
 
 import React, { useEffect } from "react";
-import { Calendar, Briefcase, Award, Code } from "lucide-react";
+import { Calendar, Code, Briefcase, Award } from "lucide-react";
 
 type Experience = {
   id: number;
@@ -8,7 +8,7 @@ type Experience = {
   company: string;
   location: string;
   date: string;
-  type: "work" | "research" | "hackathon";
+  type: "technical" | "management" | "training";
   icon: React.ReactNode;
   description: string[];
   technologies?: string[];
@@ -18,84 +18,55 @@ const Experience = () => {
   const experiences: Experience[] = [
     {
       id: 1,
-      title: "Software Engineering Intern",
-      company: "Google",
-      location: "Mountain View, CA",
-      date: "May 2023 - Aug 2023",
-      type: "work",
-      icon: <Briefcase className="h-5 w-5" />,
+      title: "Programming in C, C++, DSA",
+      company: "Chandigarh University",
+      location: "Mohali, Punjab, India",
+      date: "Aug 2022 - Present",
+      type: "technical",
+      icon: <Code className="h-5 w-5" />,
       description: [
-        "Developed and implemented new features for Google Cloud Platform's data analytics service.",
-        "Optimized database queries resulting in a 30% reduction in response time.",
-        "Collaborated with cross-functional teams to improve the user interface and user experience.",
-        "Participated in code reviews and engineering design discussions."
+        "Developed strong foundation in C and C++ programming languages",
+        "Implemented various data structures like arrays, linked lists, stacks, queues, trees, and graphs",
+        "Solved complex algorithmic problems applying different algorithmic paradigms",
+        "Participated in coding competitions and hackathons to enhance problem-solving skills",
+        "Mentored junior students in programming concepts and problem-solving approaches"
       ],
-      technologies: ["Python", "Java", "React", "BigQuery", "Kubernetes"],
+      technologies: ["C", "C++", "Data Structures", "Algorithms", "Problem Solving"],
     },
     {
       id: 2,
-      title: "Machine Learning Research Assistant",
-      company: "Stanford AI Lab",
-      location: "Stanford, CA",
-      date: "Sep 2022 - May 2023",
-      type: "research",
-      icon: <Code className="h-5 w-5" />,
+      title: "Project Management",
+      company: "Academic Projects",
+      location: "Chandigarh University",
+      date: "Jan 2023 - Present",
+      type: "management",
+      icon: <Briefcase className="h-5 w-5" />,
       description: [
-        "Conducted research on improving natural language processing models for low-resource languages.",
-        "Implemented and evaluated novel transformer architectures using PyTorch.",
-        "Co-authored a research paper presented at a leading NLP conference.",
-        "Developed data collection and preprocessing pipelines for multilingual datasets."
+        "Led multiple academic project teams with 4-6 members each",
+        "Applied Agile methodology for efficient project execution and delivery",
+        "Managed project timelines, resources, and task distribution among team members",
+        "Conducted regular project status meetings and ensured timely completion of milestones",
+        "Developed skills in conflict resolution, team motivation, and effective communication"
       ],
-      technologies: ["PyTorch", "TensorFlow", "BERT", "Python", "NLP"],
+      technologies: ["Agile", "Scrum", "Kanban", "JIRA", "GitHub", "Team Leadership"],
     },
     {
       id: 3,
-      title: "Hackathon Winner - First Place",
-      company: "TechCrunch Disrupt",
-      location: "San Francisco, CA",
-      date: "Oct 2022",
-      type: "hackathon",
+      title: "Java In-house Summer Trainee",
+      company: "Chandigarh University",
+      location: "Mohali, Punjab, India",
+      date: "June 2023 - Aug 2023",
+      type: "training",
       icon: <Award className="h-5 w-5" />,
       description: [
-        "Led a team of 4 in developing an AI-powered accessibility tool for visually impaired users.",
-        "Implemented computer vision algorithms to describe surroundings and identify objects in real-time.",
-        "Pitched the project to a panel of industry judges and won first place among 200+ teams.",
-        "Received $25,000 in seed funding to continue development."
+        "Completed intensive 3-month in-house training program on Java and related technologies",
+        "Developed a comprehensive understanding of object-oriented programming concepts",
+        "Created various Java applications including console-based and GUI applications",
+        "Learned database connectivity using JDBC and implemented CRUD operations",
+        "Developed a mini-project implementing all concepts learned during the training"
       ],
-      technologies: ["React Native", "TensorFlow.js", "Azure Cognitive Services", "Node.js"],
-    },
-    {
-      id: 4,
-      title: "Web Development Intern",
-      company: "Netflix",
-      location: "Los Gatos, CA",
-      date: "May 2022 - Aug 2022",
-      type: "work",
-      icon: <Briefcase className="h-5 w-5" />,
-      description: [
-        "Contributed to the development of Netflix's internal content management system.",
-        "Implemented responsive UI components using React and TypeScript.",
-        "Wrote unit and integration tests using Jest and React Testing Library.",
-        "Participated in agile development processes, including daily stand-ups and sprint planning."
-      ],
-      technologies: ["React", "TypeScript", "GraphQL", "Jest", "CSS-in-JS"],
-    },
-    {
-      id: 5,
-      title: "Undergraduate Researcher",
-      company: "Stanford Computer Systems Laboratory",
-      location: "Stanford, CA",
-      date: "Jan 2022 - May 2022",
-      type: "research",
-      icon: <Code className="h-5 w-5" />,
-      description: [
-        "Researched distributed systems with a focus on fault tolerance and consensus algorithms.",
-        "Implemented a prototype of a novel distributed key-value store.",
-        "Conducted performance and reliability tests under various network conditions.",
-        "Created visualization tools to analyze system behavior and identify bottlenecks."
-      ],
-      technologies: ["Go", "Rust", "Docker", "Kubernetes", "Distributed Systems"],
-    },
+      technologies: ["Java", "OOP", "JDBC", "MySQL", "Swing", "JavaFX"],
+    }
   ];
 
   useEffect(() => {
@@ -126,7 +97,7 @@ const Experience = () => {
           My Experience
         </h2>
         <p className="section-subtitle text-center reveal" data-effect="fade-bottom">
-          Professional journey through internships, research positions, and hackathons
+          Technical skills and project management experience
         </p>
 
         <div className="relative mt-16">

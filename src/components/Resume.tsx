@@ -1,8 +1,11 @@
 
 import React, { useEffect } from "react";
 import { Download, FileText, Eye } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Resume = () => {
+  const { toast } = useToast();
+
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
@@ -26,18 +29,44 @@ const Resume = () => {
 
   // Function to handle resume download
   const handleDownload = () => {
-    // Create a link to the resume file
-    const link = document.createElement('a');
-    link.href = '/resume-gajendra-malviya.pdf'; // Path to your resume PDF in the public folder
-    link.download = 'Gajendra-Malviya-Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      // Create a link to the resume file
+      const link = document.createElement('a');
+      link.href = '/resume-gajendra-malviya.pdf'; // Path to your resume PDF in the public folder
+      link.download = 'Gajendra-Malviya-Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      toast({
+        title: "Download Started",
+        description: "Your resume download has started.",
+        duration: 3000,
+      });
+    } catch (error) {
+      console.error("Download error:", error);
+      toast({
+        title: "Download Failed",
+        description: "Please make sure resume-gajendra-malviya.pdf exists in the public folder.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    }
   };
 
   // Function to handle resume preview
   const handlePreview = () => {
-    window.open('/resume-gajendra-malviya.pdf', '_blank');
+    try {
+      window.open('/resume-gajendra-malviya.pdf', '_blank');
+    } catch (error) {
+      console.error("Preview error:", error);
+      toast({
+        title: "Preview Failed",
+        description: "Please make sure resume-gajendra-malviya.pdf exists in the public folder.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    }
   };
 
   return (
@@ -86,13 +115,13 @@ const Resume = () => {
                       <h3 className="text-sm font-bold uppercase border-b border-gray-300 pb-1 mb-2">Experience</h3>
                       <div className="text-xs mb-2">
                         <div className="flex justify-between">
-                          <p className="font-semibold">Software Development Internship</p>
-                          <p>June 2023 - Aug 2023</p>
+                          <p className="font-semibold">Programming in C, C++, DSA</p>
+                          <p>Aug 2022 - Present</p>
                         </div>
-                        <p className="italic">Software Engineering Intern</p>
+                        <p className="italic">Chandigarh University</p>
                         <ul className="list-disc list-inside text-gray-700">
-                          <li>Developed features for web applications</li>
-                          <li>Optimized database queries</li>
+                          <li>Developed strong foundation in programming languages</li>
+                          <li>Implemented various data structures</li>
                         </ul>
                       </div>
                     </div>
@@ -132,7 +161,7 @@ const Resume = () => {
             <div className="md:col-span-2 flex flex-col justify-center">
               <h3 className="text-xl font-medium mb-4">Resume Overview</h3>
               <p className="text-muted-foreground text-sm mb-8">
-                My resume highlights my education at Chandigarh University, professional experience, technical skills, and notable projects. It also includes academic achievements and certifications.
+                My resume highlights my education at Chandigarh University, technical skills in programming languages like C, C++, Java, and project management experience. It also includes academic achievements and certifications.
               </p>
               
               <div className="space-y-4">

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Send, MapPin, Phone, Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -35,8 +35,9 @@ const Contact = () => {
       `;
       
       // In a real implementation, you would use a service like EmailJS, FormSubmit, or a custom API
-      // For now, we'll just simulate the process
+      // Simulate sending to gmail account
       console.log("Email content to be sent:", emailContent);
+      console.log("Sending to gmail: gajendramalviya1512@gmail.com");
       
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1500));
@@ -97,9 +98,9 @@ const Contact = () => {
           Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        <div className="max-w-2xl mx-auto mt-16">
           {/* Contact Form */}
-          <div className="glassmorphism rounded-xl p-8 reveal h-full" data-effect="fade-right">
+          <div className="glassmorphism rounded-xl p-8 reveal" data-effect="fade-right">
             <h3 className="text-xl font-medium mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit}>
               <div className="space-y-4">
@@ -189,101 +190,6 @@ const Contact = () => {
                 </button>
               </div>
             </form>
-          </div>
-          
-          {/* Contact Information */}
-          <div className="flex flex-col space-y-6 reveal" data-effect="fade-left">
-            <div className="glassmorphism rounded-xl p-8 h-auto">
-              <h3 className="text-xl font-medium mb-6">Contact Information</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-primary mt-1 mr-3" />
-                  <div>
-                    <h4 className="font-medium">Location</h4>
-                    <p className="text-muted-foreground">Pali, Rajasthan, India</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Mail className="h-5 w-5 text-primary mt-1 mr-3" />
-                  <div>
-                    <h4 className="font-medium">Email</h4>
-                    <a 
-                      href="mailto:gajendramalviya1512@gmail.com" 
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      gajendramalviya1512@gmail.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Phone className="h-5 w-5 text-primary mt-1 mr-3" />
-                  <div>
-                    <h4 className="font-medium">Phone</h4>
-                    <a 
-                      href="tel:+919521871512" 
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      +91 95218 71512
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="glassmorphism rounded-xl p-8 h-auto">
-              <h3 className="text-xl font-medium mb-6">Connect With Me</h3>
-              <div className="grid grid-cols-3 gap-4">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center p-4 bg-secondary/50 rounded-lg hover:bg-primary/10 transition-colors"
-                >
-                  <Linkedin className="h-6 w-6 text-[#0A66C2] mb-2" />
-                  <span className="text-sm">LinkedIn</span>
-                </a>
-                
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center p-4 bg-secondary/50 rounded-lg hover:bg-primary/10 transition-colors"
-                >
-                  <Github className="h-6 w-6 text-foreground mb-2" />
-                  <span className="text-sm">GitHub</span>
-                </a>
-                
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center p-4 bg-secondary/50 rounded-lg hover:bg-primary/10 transition-colors"
-                >
-                  <Twitter className="h-6 w-6 text-[#1DA1F2] mb-2" />
-                  <span className="text-sm">Twitter</span>
-                </a>
-              </div>
-            </div>
-            
-            <div className="glassmorphism rounded-xl p-8 h-auto">
-              <h3 className="text-xl font-medium mb-6">Office Hours</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span className="text-muted-foreground">9:00 AM - 5:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span className="text-muted-foreground">By appointment</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span className="text-muted-foreground">Closed</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

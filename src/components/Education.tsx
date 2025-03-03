@@ -8,7 +8,7 @@ type EducationItem = {
   degree: string;
   location: string;
   duration: string;
-  grades: string;
+  grades?: string;
   icon: React.ReactNode;
   achievements?: string[];
 };
@@ -28,19 +28,18 @@ const Education = () => {
     {
       id: 2,
       institution: "Sooraj Sikshan Sansthan Senior Secondary School",
-      degree: "12th Grade (Science - Mathematics)",
+      degree: "Class 8th to Class 12th (Science - Mathematics)",
       location: "Pali, Rajasthan",
-      duration: "May 2021",
-      grades: "98.80%",
+      duration: "April 2015 - May 2021",
+      grades: "12th Grade: 98.80%, 10th Grade: 92.17%",
       icon: <BookOpen className="h-6 w-6" />
     },
     {
       id: 3,
-      institution: "10th Grade",
-      degree: "",
+      institution: "Balaji Vidhyapeeth Uchch Prathmik Vidhyalay",
+      degree: "Class 1st to Class 7th",
       location: "Pali, Rajasthan",
-      duration: "May 2019",
-      grades: "92.17%",
+      duration: "April 2008 - March 2015",
       icon: <BookOpen className="h-6 w-6" />
     }
   ];
@@ -109,10 +108,12 @@ const Education = () => {
                     {item.location}
                   </div>
                   
-                  <div className="mt-3 flex items-center">
-                    <Award className="h-4 w-4 mr-1 text-primary" />
-                    <span className="font-medium">{item.grades}</span>
-                  </div>
+                  {item.grades && (
+                    <div className="mt-3 flex items-center">
+                      <Award className="h-4 w-4 mr-1 text-primary" />
+                      <span className="font-medium">{item.grades}</span>
+                    </div>
+                  )}
                   
                   {item.achievements && item.achievements.length > 0 && (
                     <div className="mt-4">

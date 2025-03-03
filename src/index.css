@@ -132,4 +132,94 @@
   .reveal[data-effect="zoom"] {
     @apply scale-95;
   }
+  
+  /* Circle animations for hero section */
+  .circle-animation {
+    @apply absolute rounded-full opacity-30;
+    background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 100%);
+    animation: float 20s infinite ease-in-out;
+  }
+  
+  .circle-1 {
+    width: 300px;
+    height: 300px;
+    left: -100px;
+    top: 10%;
+    animation-duration: 25s;
+    background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--ring)) 100%);
+  }
+  
+  .circle-2 {
+    width: 400px;
+    height: 400px;
+    right: -150px;
+    top: 30%;
+    animation-duration: 30s;
+    animation-delay: 2s;
+    background: linear-gradient(225deg, hsl(var(--primary)) 0%, hsl(var(--destructive)) 100%);
+  }
+  
+  .circle-3 {
+    width: 200px;
+    height: 200px;
+    left: 20%;
+    bottom: 10%;
+    animation-duration: 18s;
+    animation-delay: 1s;
+    background: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--muted)) 100%);
+  }
+  
+  .circle-4 {
+    width: 150px;
+    height: 150px;
+    right: 15%;
+    bottom: 20%;
+    animation-duration: 22s;
+    animation-delay: 3s;
+    background: linear-gradient(60deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+  
+  .circle-5 {
+    width: 250px;
+    height: 250px;
+    left: 40%;
+    top: 5%;
+    animation-duration: 27s;
+    animation-delay: 4s;
+    background: linear-gradient(120deg, hsl(var(--destructive)) 0%, hsl(var(--primary)) 100%);
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(5%, 5%) rotate(5deg);
+    }
+    50% {
+      transform: translate(0, 10%) rotate(10deg);
+    }
+    75% {
+      transform: translate(-5%, 5%) rotate(5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
+}
+
+/* Add scale-in animation */
+@keyframes scale-in {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
 }

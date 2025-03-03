@@ -23,10 +23,19 @@ const Hero = () => {
       id="home" 
       className="min-h-screen relative flex items-center justify-center overflow-hidden pt-24 pb-16"
     >
-      {/* Black and white background */}
-      <div className="absolute inset-0 z-0">
+      {/* Animated background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-black/70 dark:bg-black/80 z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black bg-cover bg-center"></div>
+        
+        {/* Animated circles */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+          <div className="circle-animation circle-1"></div>
+          <div className="circle-animation circle-2"></div>
+          <div className="circle-animation circle-3"></div>
+          <div className="circle-animation circle-4"></div>
+          <div className="circle-animation circle-5"></div>
+        </div>
       </div>
       
       {/* Content */}
