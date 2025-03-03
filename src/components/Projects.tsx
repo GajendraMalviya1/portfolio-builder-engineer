@@ -25,7 +25,7 @@ const Projects = () => {
         id: 1,
         title: "Crime Rate Prediction",
         description: "Developed a machine learning model using regression techniques to analyze and forecast crime trends based on demographic, geographic, and temporal factors.",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+        image: "https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg",
         technologies: ["ML Algorithms", "Regression", "Neural Networks", "Python"],
         github: "https://github.com/GajendraMalviya1/Crime-Rate-Prediction",
         demo: "https://demo.com",

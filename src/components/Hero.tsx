@@ -87,7 +87,7 @@ const Hero = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://codfolio.com/yourprofile" 
+              href="https://codolio.com/profile/bklJYbeu" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
