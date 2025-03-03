@@ -26,18 +26,31 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Email sending functionality
-      const emailContent = `
-        Name: ${formData.name}
-        Email: ${formData.email}
-        Subject: ${formData.subject}
-        Message: ${formData.message}
-      `;
+      // Use EmailJS to send email directly from the frontend
+      const serviceID = 'default_service'; // You'll need to create an EmailJS account and set up a service
+      const templateID = 'template_id'; // Create a template in EmailJS
+      const userID = 'user_id'; // Your EmailJS user ID
       
-      // In a real implementation, you would use a service like EmailJS, FormSubmit, or a custom API
-      // Simulate sending to gmail account
-      console.log("Email content to be sent:", emailContent);
-      console.log("Sending to gmail: gajendramalviya1512@gmail.com");
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'gajendramalviya1512@gmail.com',
+      };
+      
+      // In a real implementation, you would uncomment this code after setting up EmailJS
+      /* 
+      await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        userID
+      );
+      */
+      
+      // For demo purposes, we'll simulate the email sending
+      console.log("Email would be sent with:", templateParams);
       
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1500));

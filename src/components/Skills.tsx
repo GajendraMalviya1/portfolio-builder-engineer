@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { 
   Code, Database, Terminal, Globe, Layout, Server, 
   Cpu, GitBranch, PackageOpen, Shield, Layers, Search,
@@ -15,7 +15,89 @@ type SkillCategory = {
   }[];
 };
 
+type CodolioData = {
+  leetcode?: {
+    username: string;
+    totalSolved: number;
+    ranking: number;
+    reputation: number;
+    submissionStats: {
+      totalSubmissions: number;
+      waSubmissions: number;
+      acSubmissions: number;
+      reSubmissions: number;
+      otherSubmissions: number;
+    };
+  };
+  gfg?: {
+    username: string;
+    institution: string;
+    score: number;
+    ranking: number;
+    stars: number;
+    problemsSolved: number;
+  };
+  codechef?: {
+    username: string;
+    stars: number;
+    ranking: number;
+    rating: number;
+    highestRating: number;
+    country: string;
+    globalRank: number;
+    countryRank: number;
+  };
+  codeforces?: {
+    username: string;
+    rating: number;
+    maxRank: string;
+    maxRating: number;
+    rank: string;
+  };
+  github?: {
+    username: string;
+    name: string;
+    followers: number;
+    following: number;
+    public_repos: number;
+    public_gists: number;
+  };
+  loading: boolean;
+  error: string | null;
+};
+
 const Skills = () => {
+  const [codolioData, setCodolioData] = useState<CodolioData>({
+    loading: true,
+    error: null
+  });
+
+  useEffect(() => {
+    const fetchCodolioData = async () => {
+      try {
+        const response = await fetch('https://codolio.com/api/profile/bklJYbeu');
+        if (!response.ok) {
+          throw new Error('Failed to fetch Codolio data');
+        }
+        const data = await response.json();
+        setCodolioData({
+          ...data,
+          loading: false,
+          error: null
+        });
+        console.log('Codolio data:', data);
+      } catch (error) {
+        console.error('Error fetching Codolio data:', error);
+        setCodolioData({
+          loading: false,
+          error: error instanceof Error ? error.message : 'An error occurred'
+        });
+      }
+    };
+
+    fetchCodolioData();
+  }, []);
+
   const skillCategories: SkillCategory[] = [
     {
       name: "Programming Languages",
@@ -119,12 +201,132 @@ const Skills = () => {
                     <div className="mb-2">
                       {skill.logo}
                     </div>
-                    <span className="text-xs text-center font-medium">{skill.name}</span>
+                    <span className="text-sm font-medium text-foreground">{skill.name}</span>
                   </div>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Codolio Stats Section */}
+        <div className="mt-16">
+          <h2 className="section-title text-center reveal" data-effect="fade-bottom">
+            Coding Profiles
+          </h2>
+          <p className="section-subtitle text-center reveal" data-effect="fade-bottom">
+            Competitive programming and development statistics from various platforms
+          </p>
+          
+          {codolioData.loading ? (
+            <div className="flex justify-center items-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+            </div>
+          ) : codolioData.error ? (
+            <div className="p-6 bg-red-100 dark:bg-red-900/20 rounded-lg text-center my-8">
+              <p className="text-red-600 dark:text-red-400">Failed to load coding profiles data. Please try again later.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              {codolioData.leetcode && (
+                <div className="glassmorphism rounded-xl p-6 reveal" data-effect="zoom">
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 mr-4 bg-yellow-100 dark:bg-yellow-900/20 rounded-lg">
+                      <span className="text-xl font-bold text-yellow-600 dark:text-yellow-400">LC</span>
+                    </div>
+                    <h3 className="text-xl font-medium">LeetCode</h3>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Username:</span> {codolioData.leetcode.username}</p>
+                    <p><span className="font-medium">Problems Solved:</span> {codolioData.leetcode.totalSolved}</p>
+                    <p><span className="font-medium">Ranking:</span> {codolioData.leetcode.ranking}</p>
+                    <p><span className="font-medium">Reputation:</span> {codolioData.leetcode.reputation}</p>
+                    <p><span className="font-medium">Acceptance Rate:</span> {
+                      codolioData.leetcode.submissionStats.acSubmissions 
+                      ? Math.round((codolioData.leetcode.submissionStats.acSubmissions / codolioData.leetcode.submissionStats.totalSubmissions) * 100) 
+                      : 0
+                    }%</p>
+                  </div>
+                </div>
+              )}
+              
+              {codolioData.gfg && (
+                <div className="glassmorphism rounded-xl p-6 reveal" data-effect="zoom">
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 mr-4 bg-green-100 dark:bg-green-900/20 rounded-lg">
+                      <span className="text-xl font-bold text-green-600 dark:text-green-400">GFG</span>
+                    </div>
+                    <h3 className="text-xl font-medium">GeeksForGeeks</h3>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Username:</span> {codolioData.gfg.username}</p>
+                    <p><span className="font-medium">Institution:</span> {codolioData.gfg.institution}</p>
+                    <p><span className="font-medium">Score:</span> {codolioData.gfg.score}</p>
+                    <p><span className="font-medium">Ranking:</span> {codolioData.gfg.ranking}</p>
+                    <p><span className="font-medium">Problems Solved:</span> {codolioData.gfg.problemsSolved}</p>
+                    <p><span className="font-medium">Stars:</span> {codolioData.gfg.stars}⭐</p>
+                  </div>
+                </div>
+              )}
+              
+              {codolioData.codechef && (
+                <div className="glassmorphism rounded-xl p-6 reveal" data-effect="zoom">
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 mr-4 bg-red-100 dark:bg-red-900/20 rounded-lg">
+                      <span className="text-xl font-bold text-red-600 dark:text-red-400">CC</span>
+                    </div>
+                    <h3 className="text-xl font-medium">CodeChef</h3>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Username:</span> {codolioData.codechef.username}</p>
+                    <p><span className="font-medium">Stars:</span> {codolioData.codechef.stars}⭐</p>
+                    <p><span className="font-medium">Rating:</span> {codolioData.codechef.rating}</p>
+                    <p><span className="font-medium">Highest Rating:</span> {codolioData.codechef.highestRating}</p>
+                    <p><span className="font-medium">Global Rank:</span> {codolioData.codechef.globalRank}</p>
+                    <p><span className="font-medium">Country:</span> {codolioData.codechef.country}</p>
+                    <p><span className="font-medium">Country Rank:</span> {codolioData.codechef.countryRank}</p>
+                  </div>
+                </div>
+              )}
+              
+              {codolioData.codeforces && (
+                <div className="glassmorphism rounded-xl p-6 reveal" data-effect="zoom">
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 mr-4 bg-purple-100 dark:bg-purple-900/20 rounded-lg">
+                      <span className="text-xl font-bold text-purple-600 dark:text-purple-400">CF</span>
+                    </div>
+                    <h3 className="text-xl font-medium">Codeforces</h3>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Username:</span> {codolioData.codeforces.username}</p>
+                    <p><span className="font-medium">Rating:</span> {codolioData.codeforces.rating}</p>
+                    <p><span className="font-medium">Rank:</span> {codolioData.codeforces.rank}</p>
+                    <p><span className="font-medium">Max Rating:</span> {codolioData.codeforces.maxRating}</p>
+                    <p><span className="font-medium">Max Rank:</span> {codolioData.codeforces.maxRank}</p>
+                  </div>
+                </div>
+              )}
+              
+              {codolioData.github && (
+                <div className="glassmorphism rounded-xl p-6 reveal" data-effect="zoom">
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 mr-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                      <GitBranch className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+                    </div>
+                    <h3 className="text-xl font-medium">GitHub</h3>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Username:</span> {codolioData.github.username}</p>
+                    <p><span className="font-medium">Name:</span> {codolioData.github.name}</p>
+                    <p><span className="font-medium">Repositories:</span> {codolioData.github.public_repos}</p>
+                    <p><span className="font-medium">Followers:</span> {codolioData.github.followers}</p>
+                    <p><span className="font-medium">Following:</span> {codolioData.github.following}</p>
+                    <p><span className="font-medium">Gists:</span> {codolioData.github.public_gists}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>
